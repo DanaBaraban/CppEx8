@@ -160,7 +160,7 @@ using namespace std;
 		
 		
 		string Board::draw(int dim){
-			string nf = fileName("image");//func("image");
+			string nf = fileName("board");//func("board");
 			nf+=".ppm";
 			paint(nf, dim);
 			return nf;
@@ -171,9 +171,9 @@ using namespace std;
 
 	//RGB *ima;
 	void Board::putpixel(int x, int y, int dim, RGB *ima){
-		(ima)[dim * (x)+(y)].red = 0;
-		(ima)[dim * (x)+(y)].green = 200;
-		(ima)[dim * (x)+(y)].blue = 200;
+		(ima)[dim * (x)+(y)].red = 255;
+		(ima)[dim * (x)+(y)].green = 0;
+		(ima)[dim * (x)+(y)].blue = 0;
 	}
 
 	void Board::drawcircle(int x0, int y0, int radius, int dim, RGB *ima){
@@ -260,10 +260,10 @@ using namespace std;
 	 for(int i=0; i<len; i++){
 		  for(int j=0; j<len; j++){
 			  if(board[i][j] == 'O'){
-				  drawcircle(cell*i + mid, cell*j + mid, mid - (mid/5), dimx, ima);
+				  drawcircle(cell*i + mid, cell*j + mid, mid - (mid/2), dimx, ima);
 			  }
 			  if(board[i][j] == 'X'){
-				  drawx(cell*i + mid, cell*j + mid, mid - (mid/5), dimx, ima);
+				  drawx(cell*i + mid, cell*j + mid, mid - (mid/2), dimx, ima);
 			  }
 		}
 	 }
