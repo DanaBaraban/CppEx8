@@ -27,7 +27,7 @@ using namespace std;
 			for (int i = 0; i < len; ++i) {
 				vector<BoardMem> tmp;
 				for (int j = 0; j < len; ++j) {
-					BoardMem c(i, j, b2.board[i][j].c);
+					BoardMem c(i, j, b2.board[i][j].val);
 					tmp.push_back(c);
 				}
 				board.push_back(tmp);
@@ -88,7 +88,7 @@ using namespace std;
 			for (int i = 0; i < len; ++i) {
 				vector<BoardMem> tmp;
 				for (int j = 0; j < len; ++j) {
-					BoardMem c(i, j, b2.board[i][j].c);
+					BoardMem c(i, j, b2.board[i][j].val);
 					tmp.push_back(c);
 				}
 				newBoard.push_back(tmp);
