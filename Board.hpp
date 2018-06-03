@@ -4,7 +4,7 @@
 #include <fstream>
 #include <list>
 #include "BoardMem.cpp"
-#include "IllegalBoardMemException.cpp"
+#include "IllegalCoordinateException.cpp"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ class Board{
 			int x2 = crdn.col;
 			
 			if(x1>=len || x2>=len || x1<0 || x2<0){
-				IllegalBoardMemException ie(x1,x2);
+				IllegalCoordinateException ie(x1,x2);
 				throw ie;
 			}
 			return this->board[x1][x2];
